@@ -1071,6 +1071,7 @@ console.log(b.toSpliced(0, 1));
 console.log(JSON.stringify(a));
 
 
+// function overloading is complex but we can try it our own 
 class foo {
 
 	
