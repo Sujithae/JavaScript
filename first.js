@@ -1168,3 +1168,8 @@ let p = new Promise((resolve, reject) => {
   .then(message => console.log(`Promise resolved: ${message}`))
   .catch(message => console.log(`Promise rejected: ${message}`));
 
+  console.log(" i hate you");
+  console.log(" haha haha haha");
+  
+
+
