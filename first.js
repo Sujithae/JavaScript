@@ -1054,8 +1054,8 @@ while(!sorted) {
 }
 console.log(arr);
 
-*/
 
+*/
 
 let fruits=["orange","apple","kiwi","apple"];
 console.log(fruits.push("banana"));
