@@ -1071,5 +1071,72 @@ console.log(b.toSpliced(0, 1));
 console.log(JSON.stringify(a));
 
 
+class foo {
+
+	
+	overloadableFunction() {
+
+		
+		let function1 = function (arg1) {
+			console.log("Function1 called with"
+					+ " arguments : " + arg1);
+			return arg1;
+		};
+
+		let function2 = function (arg1, arg2) {
+			console.log("Function2 called with"
+					+ " arguments : " + arg1 
+					+ " and " + arg2);
+			return arg1 + arg2;
+		};
+
+		let function3 = function (arg1) {
+			let concatenated__arguments = " ", temp = " "
+
+			for (let i = 0; i < arg1.length; i++) {
+				concatenated__arguments = 
+					concatenated__arguments + arg1[i]
+			}
+
+			for (let i = 0; i < arg1.length; i++) {
+				temp = temp + " " + arg1[i]
+			}
+
+			console.log("Function3 called with this"
+				+ " array as an argument : [" + temp + "]");
+			console.log("Output of log is : ")
+
+			
+			return concatenated__arguments; 
+		};
+
+		
+		if (arguments.length === 1 
+				&& Array.isArray(arguments[0])) {
+			return function3(arguments[0]);
+		} else if (arguments.length === 2) {
+			return function2(arguments[0], arguments[1]);
+		} else if (arguments.length === 1 
+				&& !Array.isArray(arguments[0])) {
+			return function1(arguments[0]);
+		}
+	}
+}
+
+
+
+
+let object = new foo();
+
+
+console.log(object.overloadableFunction("Geeks"));
+
+
+console.log(object.overloadableFunction("Geeks", "for"));
+
+console.log(object.overloadableFunction(
+				["Geeks", "for", "Geeks"])); 
+
+
 
 
