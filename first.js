@@ -1055,7 +1055,7 @@ while(!sorted) {
 console.log(arr);
 
 
-*/
+
 
 let fruits=["orange","apple","kiwi","apple"];
 console.log(fruits.push("banana"));
@@ -1137,12 +1137,13 @@ console.log(object.overloadableFunction("Geeks", "for"));
 
 console.log(object.overloadableFunction(
 				["Geeks", "for", "Geeks"])); 
+                */
 
 
                 function strictModeExample() {
                     'use strict'; 
                     var variable1 = 10;
-                    variable2 = 20; 
+                     const variable2 = 20; 
                     return variable1 + variable2;
                 }
                 
