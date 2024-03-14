@@ -1139,5 +1139,15 @@ console.log(object.overloadableFunction(
 				["Geeks", "for", "Geeks"])); 
 
 
+                function nonStrictModeExample() {
+                    'use strict';
+                    var variable1 = 10; 
+                    var  variable2 = 20;
+                    return variable1 + variable2;
+                }
+                
+                console.log(nonStrictModeExample());
+                console.log(variable2); 
+                
 
 
