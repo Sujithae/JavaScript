@@ -1148,8 +1148,23 @@ console.log(object.overloadableFunction(
                 }
                 
                 console.log(strictModeExample()); 
-                
                
-                
+ let a=["array","functions","numbers","boolean","float","bigint"];
+ console.log(a.push("objects"));
+console.log(a.lastIndexOf());
 
+// promise
+
+let p = new Promise((resolve, reject) => {
+    let isTrue = true;
+    if (isTrue) {
+      resolve('Success');
+    } else {
+      reject('Error');
+    }
+  });
+  
+  p
+  .then(message => console.log(`Promise resolved: ${message}`))
+  .catch(message => console.log(`Promise rejected: ${message}`));
 
