@@ -1171,7 +1171,7 @@ let p = new Promise((resolve, reject) => {
   console.log(" i hate you");
   console.log(" haha haha haha");
   
-*/
+
 let sum=11;
 if(sum %2==0){
    console.log("even");
@@ -1183,6 +1183,8 @@ let length=10;
 let breath=20;
 area = length*breath;
 console.log( " area of triangle  is " +area);
+
+*/
 
 
 
