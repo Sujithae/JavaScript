@@ -1176,7 +1176,15 @@ let sum=11;
 if(sum %2==0){
    console.log("even");
 } else{
-    console.log("odd");
+   console.log("odd");
 }
+
+let length=10;
+let breath=20;
+area = length*breath;
+console.log( " area of triangle  is " +area);
+
+
+
 
 
