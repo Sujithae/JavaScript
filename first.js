@@ -1137,7 +1137,7 @@ console.log(object.overloadableFunction("Geeks", "for"));
 
 console.log(object.overloadableFunction(
 				["Geeks", "for", "Geeks"])); 
-                */
+                
 
 
                 function strictModeExample() {
@@ -1171,5 +1171,12 @@ let p = new Promise((resolve, reject) => {
   console.log(" i hate you");
   console.log(" haha haha haha");
   
+*/
+let sum=11;
+if(sum %2==0){
+   console.log("even");
+} else{
+    console.log("odd");
+}
 
 
