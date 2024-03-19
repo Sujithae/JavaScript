@@ -1261,10 +1261,11 @@ const addPromise = function (a, b) {
     ); 
   })(); 
 
-  */
+  
 var message='';
 console.log(global.message);
 
 console.log(module);
+*/
 
 
