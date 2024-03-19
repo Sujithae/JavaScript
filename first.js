@@ -1195,7 +1195,7 @@ const readline = require('readline').createInterface({
     console.log(`Hi ${name}!`);
     readline.close();
  });
-*/
+
 http = require('node:http');
 listener = function (request, response) {
    // Send the HTTP header 
@@ -1213,3 +1213,53 @@ server.listen(3000);
 // Console will print the message
 
 console.log('Server running at http://127.0.0.1:3000/');
+
+
+// callback
+
+setTimeout(function (){
+    console.log('Callback as Standard Function'); 
+}, 1000);
+
+setTimeout(() => { 
+    console.log('Callback as Arrow Function'); 
+}, 1000);
+
+const fs = require("fs");
+const filedata = fs.readFileSync('inputfile1.txt');
+console.log(filedata.toString());
+console.log("End of Program execution");
+
+const fs = require("fs");
+ 
+fs.readFile('inputfile1.txt',
+    function (ferr, filedata) {
+        if (ferr) return console.error(ferr);
+        console.log(filedata.toString());
+    }
+);
+console.log("End of Program execution");
+*/
+
+const addPromise = function (a, b) { 
+    return new Promise((resolve, reject) => { 
+      setTimeout(() => { 
+        resolve(a + b); 
+      }, 1000); 
+    }); 
+  }; 
+
+(async () => { 
+    const sum1 = await addPromise(1, 2); 
+    const sum2 = await addPromise(3, sum1); 
+    const sum3 = await addPromise(4, sum2); 
+    const sum4 = await addPromise(5, sum3); 
+    
+    console.log( 
+      `Sum of first 5 natural numbers using  
+       promise and async/await is ${sum4}` 
+    ); 
+  })(); 
+
+
+
