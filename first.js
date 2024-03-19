@@ -1239,12 +1239,12 @@ fs.readFile('inputfile1.txt',
     }
 );
 console.log("End of Program execution");
-*/
+
 
 const addPromise = function (a, b) { 
     return new Promise((resolve, reject) => { 
       setTimeout(() => { 
-        resolve(a + b); 
+        resolve(a * b); 
       }, 1000); 
     }); 
   }; 
@@ -1256,10 +1256,45 @@ const addPromise = function (a, b) {
     const sum4 = await addPromise(5, sum3); 
     
     console.log( 
-      `Sum of first 5 natural numbers using  
+      `Sum of first 5 factorial numbers using  
        promise and async/await is ${sum4}` 
     ); 
   })(); 
+
+  */
+
+
+  const http = require('http');
+
+  const server = http.createServer((req, res) => {
+    if (req.method === 'GET') {
+      // Handle GET request
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.end('GET request received');
+    } else if (req.method === 'POST') {
+      // Handle POST request
+      let body = '';
+      req.on('data', (chunk) => {
+        body += chunk;
+      });
+      req.on('end', () => {
+        console.log('Received body:', body);
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('POST request received');
+      });
+    } else {
+      // Handle other HTTP methods
+      res.writeHead(405, {'Content-Type': 'text/plain'});
+      res.end('Method not allowed');
+    }
+  });
+  
+  const PORT = process.env.PORT || 3000;
+  
+  server.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+  
 
 
 
