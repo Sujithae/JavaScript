@@ -1262,39 +1262,9 @@ const addPromise = function (a, b) {
   })(); 
 
   */
+var message='';
+console.log(global.message);
 
-
-  const http = require('http');
-
-  const server = http.createServer((req, res) => {
-    if (req.method === 'GET') {
-      // Handle GET request
-      res.writeHead(200, {'Content-Type': 'text/plain'});
-      res.end('GET request received');
-    } else if (req.method === 'POST') {
-      // Handle POST request
-      let body = '';
-      req.on('data', (chunk) => {
-        body += chunk;
-      });
-      req.on('end', () => {
-        console.log('Received body:', body);
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-        res.end('POST request received');
-      });
-    } else {
-      // Handle other HTTP methods
-      res.writeHead(405, {'Content-Type': 'text/plain'});
-      res.end('Method not allowed');
-    }
-  });
-  
-  const PORT = process.env.PORT || 3000;
-  
-  server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-  
-
+console.log(module);
 
 
