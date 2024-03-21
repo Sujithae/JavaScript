@@ -1,3 +1,5 @@
+// hw to creat and detele directory 
+
 const fs=require('fs');
 // to create directory
 /*
