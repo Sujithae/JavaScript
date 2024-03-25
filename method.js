@@ -32,6 +32,7 @@ app.get('/users/:firstname/:lastname', (req, res) => {
     const lastname = req.params.lastname;
     res.send(`User: ${firstname} ${lastname}`);
 })
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
@@ -185,7 +186,7 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-*/
+
 
 // delete using body
 
@@ -194,6 +195,74 @@ app.delete('/users', (req, res) => {
     res.send(`Deleted user with id: ${id}`);
 });
 
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+
+// head using query
+
+
+app.head('/users', (req, res) => {
+    const { firstname, lastname } = req.query;
+    console.log('Received query parameters:', { firstname, lastname });
+    res.set({
+        'Content-Type': 'application/json',
+        'Content-Length': '1234'
+    });
+    res.status(200).send();
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+// head using body
+
+app.head('/users', (req, res) => {
+    const { firstname, lastname } = req.body;
+    console.log('Received query parameters:', { firstname, lastname });
+    res.set({
+        'Content-Type': 'application/json',
+        'Content-Length': '1710'
+    });
+    res.status(200).send();
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+
+
+//head using params
+app.head('/users', (req, res) => {
+    const { firstname, lastname } = req.params;
+    console.log('Received query parameters:', { firstname, lastname });
+    res.set({
+        'Content-Type': 'application/json',
+        'location': 'desktop'
+    });
+    res.status(200).send();
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
+*/
+
+app.use(express.json());
+app.options('/users', (req, res) => {
+    res.set({
+        'Allow': 'GET, POST, PUT, DELETE',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+        'Access-Control-Allow-Headers': 'json, me',
+        'Access-Control-Max-Age': '86400' 
+    });
+    
+    res.status(200).send();
+});
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
