@@ -4,7 +4,8 @@
     "express": "^4.18.3",
     "formidable": "^3.5.1",
     "fs": "^0.0.1-security",
-    "http": "^0.0.1-security"
+    "http": "^0.0.1-security",
+    "uuid": "^9.0.1"
   },
   "name": "javascript",
   "description": "Hi there...👋 I'm currently doing my internship on JavaScript at Calibraint (Block chain development company)👍 \r and also i'm learning Nodejs...Happy Learning....",
