@@ -95,6 +95,7 @@ const {firstname,lastname} = req.params;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 })
+*/
 
 //body (give their ur input)
 app.post('/users',(req,res)=>{
@@ -111,7 +112,7 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-
+/*
 // get using body
 
 app.use(express.json());
@@ -250,7 +251,7 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-*/
+//options in http
 
 app.use(express.json());
 app.options('/users', (req, res) => {
@@ -266,3 +267,4 @@ app.options('/users', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+*/
