@@ -1000,13 +1000,13 @@ let input = {  "a": 2,
                               }
                               
                               console.log(sumEvenNumbers(input));
-                              
+                            
     
    // JavaScript code demonstrating a simple object
 let school = {
-	name: 'Vivekananda School',
-	location: 'Delhi',
-	established: '1971',
+	name: 'Rajalakshmi institute of technology ',
+	location: 'chennai',
+	established: '2003',
 	
 }
 console.log(school.name+ " was established in " + school.location + " at " +school.established);
@@ -1268,11 +1268,5 @@ console.log(global.message);
 console.log(module);
 */
 
-let marks = [34, 45, 98, 26, 51];
-let total = 0;
-for (let i = 0; i <= marks.length; i++) {
-   total += marks[i];
-}
-var no = marks.length;
-console.log(total/no);
+
 
