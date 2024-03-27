@@ -1,3 +1,5 @@
+/*
+
 const { Server } = require("socket.io");
 const express = require('express');
 const { createServer } = require('node:http');
@@ -24,3 +26,21 @@ app.get('/', (req, res) => {
 server.listen(PORT, () => {
   console.log(`server running at ${PORT}` );
 });
+*/
+
+const express = require('express');
+const { query, matchedData, validationResult } = require('express-validator');
+const app = express();
+
+app.use(express.json());
+app.get('/hello', query('person').notEmpty().escape(), (req, res) => {
+  const result = validationResult(req);
+  if (result.isEmpty()) {
+    const data = matchedData(req);
+    return res.send(`Hello, ${data.person}!`);
+  }
+
+  res.send({ errors: result.array() });
+});
+
+app.listen(3000);
